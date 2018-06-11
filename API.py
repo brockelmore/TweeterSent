@@ -64,13 +64,8 @@ def create_graph(terms, vs):
                temp.sort_values('unix', inplace=True)
                temp.unix = pd.to_datetime(temp.unix, unit='ms')
                temp['sentiment_smoothed'] = temp['sentiment'].rolling(int(len(temp)/4)).mean()
-
-               #df[terms[i]] = temp['sentiment'].rolling(int(len(temp)/4)).mean()
-               #df['unix'] = temp['unix']
-               #print(df.tail())
-               #print(terms[i])
-               #print(colors[i])
                p.line(x=temp['unix'], y=temp['sentiment_smoothed'], color=colors[i], line_width=3)
+                
         p.background_fill_color = "black"
         p.border_fill_color = "black"
         p.yaxis.major_label_text_color = "white"
