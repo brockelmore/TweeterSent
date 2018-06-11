@@ -12,7 +12,7 @@ password = ''
 database = ''
 table = ''
 
-db2 = create_engine('mysql+mysqlconnector://{}:{}@localhost/{}'.format(user, password, database, echo=False)
+db2 = create_engine('mysql+mysqlconnector://{}:{}@localhost/{}'.format(user, password, database), echo=False)
 c = db2.connect()
 
 def create_table():
